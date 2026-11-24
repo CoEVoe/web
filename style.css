@@ -1,0 +1,643 @@
+/* =========================================
+   KRYPTOMĚNY – SPOLEČNÝ STYL WEBU
+   ========================================= */
+
+:root {
+    --pozadi: #081522;
+    --pozadi-karty: #102438;
+    --pozadi-svetle: #173249;
+    --tyrkysova: #49e0c1;
+    --modra: #69b9ff;
+    --text: #edf5fb;
+    --text-tlumeny: #b8c9d8;
+    --okraj: #29465d;
+    --radius: 16px;
+    --sirka: 1180px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--pozadi);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    line-height: 1.7;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+p {
+    margin-top: 0;
+    color: var(--text-tlumeny);
+}
+
+h1, h2, h3 {
+    line-height: 1.3;
+}
+
+h2 {
+    font-size: clamp(1.6rem, 3vw, 2.3rem);
+}
+
+.stranka {
+    width: min(var(--sirka), calc(100% - 40px));
+    margin: 24px auto;
+}
+
+/* =========================================
+   HORNÍ PANEL – HLAVIČKA A NAVIGACE
+   ========================================= */
+
+.horni-panel {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--pozadi);
+}
+
+/* HLAVIČKA */
+
+.hlavicka {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+    min-height: 100px;
+    padding: 18px 28px;
+    border: 1px solid var(--okraj);
+    border-radius: var(--radius);
+    background: var(--pozadi-karty);
+}
+
+.hlavicka h1 {
+    margin: 0;
+    font-size: clamp(1.1rem, 2.5vw, 1.8rem);
+    text-align: center;
+}
+
+.logo {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 90px;
+    height: 90px;
+    border: 2px solid var(--tyrkysova);
+    border-radius: 12px;
+    color: var(--tyrkysova);
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 1.05;
+    text-align: center;
+}
+
+/* NAVIGACE */
+
+.navigace {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin: 14px 0 36px;
+    padding: 12px;
+    border: 1px solid var(--okraj);
+    border-radius: 12px;
+    background: var(--pozadi-karty);
+}
+
+.navigace a {
+    padding: 9px 14px;
+    border-radius: 8px;
+    color: var(--text);
+    font-size: 14px;
+    font-weight: bold;
+    transition: background 0.2s, color 0.2s;
+}
+
+.navigace a:hover,
+.navigace a:focus-visible,
+.navigace a.aktivni {
+    background: var(--tyrkysova);
+    color: var(--pozadi);
+}
+
+/* ÚVODNÍ STRÁNKA */
+
+.uvodni-banner {
+    display: flex;
+    align-items: center;
+    min-height: 380px;
+    padding: clamp(28px, 7vw, 80px);
+    overflow: hidden;
+    border: 1px solid var(--okraj);
+    border-radius: 22px;
+    background:
+        radial-gradient(circle at 85% 35%,
+            rgba(73, 224, 193, 0.20), transparent 32%),
+        linear-gradient(120deg, #102438, #0b1d2c);
+}
+
+.uvodni-obsah {
+    max-width: 690px;
+}
+
+.nadpis-maly {
+    color: var(--tyrkysova);
+    font-size: 19px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.uvodni-banner h2 {
+    margin: 30px 0;
+    font-size: clamp(2rem, 5vw, 3.8rem);
+}
+
+.uvodni-banner p:not(.nadpis-maly) {
+    max-width: 600px;
+    font-size: 19px;
+}
+
+.rozcestnik {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    margin: 34px 0;
+}
+
+.rozcestnik-karta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 235px;
+    padding: 25px;
+    border: 1px solid var(--okraj);
+    border-radius: var(--radius);
+    background: var(--pozadi-karty);
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.rozcestnik-karta:hover {
+    transform: translateY(-5px);
+    border-color: var(--tyrkysova);
+}
+
+.karta-ikona {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    background: var(--pozadi-svetle);
+    color: var(--tyrkysova);
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.rozcestnik-karta h3 {
+    margin: 18px 0 8px;
+}
+
+.rozcestnik-karta p {
+    margin-bottom: 18px;
+}
+
+.odkaz {
+    margin-top: auto;
+    color: var(--tyrkysova);
+    font-weight: bold;
+}
+
+.uvodni-info,
+.zaver {
+    margin: 35px 0;
+    padding: 28px;
+    border: 1px solid var(--okraj);
+    border-radius: var(--radius);
+    background: var(--pozadi-karty);
+}
+
+/* NADPISY PODSTRÁNEK */
+
+.nadpis-stranky {
+    margin: 0 0 30px;
+    padding: 20px;
+    border: 1px solid var(--okraj);
+    border-radius: 12px;
+    background: var(--pozadi-karty);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    text-align: center;
+}
+
+.historie-uvod {
+    margin-bottom: 36px;
+    padding: 32px;
+    border: 1px solid var(--okraj);
+    border-radius: var(--radius);
+    background:
+        radial-gradient(circle at 90% 10%,
+            rgba(105, 185, 255, 0.15), transparent 35%),
+        var(--pozadi-karty);
+}
+
+.historie-uvod h2 {
+    margin: 10px 0;
+}
+
+.historie-uvod p:last-child {
+    max-width: 760px;
+}
+
+/* STRÁNKA JAK KRYPTOMĚNY FUNGUJÍ */
+
+.stridavy-obsah {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: stretch;
+}
+
+/* místo původního společného pravidla */
+.obrazek-blok,
+.text-blok {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 0;
+    min-height: 230px;
+    padding: 28px;
+}
+
+.text-blok {
+    border: 1px solid var(--okraj);
+    border-radius: var(--radius);
+    background: var(--pozadi-karty);
+}
+
+.obrazek-blok {
+    align-items: center;
+    background: transparent;   /* žádné pozadí */
+    border: none;              /* žádný rámeček */
+    text-align: center;
+}
+
+
+.obrazek-blok p {
+    margin: 12px 0 0;
+    font-weight: bold;
+}
+
+.velky-symbol {
+    color: var(--tyrkysova);
+    font-size: 125px;
+    line-height: 1.2;
+}
+
+.text-blok h2 {
+    margin-top: 0;
+    font-size: 23px;
+}
+
+.text-blok p:last-child {
+    margin-bottom: 0;
+}
+
+.upozorneni {
+    margin: 28px 0;
+    padding: 22px 25px;
+    border-left: 4px solid var(--tyrkysova);
+    border-radius: 0 12px 12px 0;
+    background: var(--pozadi-karty);
+    color: var(--text-tlumeny);
+}
+
+.upozorneni strong {
+    color: var(--tyrkysova);
+}
+
+/* HISTORIE – ČASOVÁ OSA */
+
+.casova-osa {
+    position: relative;
+    max-width: 850px;
+    margin: 0 auto 45px;
+    padding-left: 35px;
+}
+
+.casova-osa::before {
+    position: absolute;
+    top: 8px;
+    bottom: 8px;
+    left: 10px;
+    width: 2px;
+    background: var(--tyrkysova);
+    content: "";
+}
+
+.udalost {
+    position: relative;
+    margin-bottom: 26px;
+}
+
+.udalost::before {
+    position: absolute;
+    top: 9px;
+    left: -31px;
+    width: 14px;
+    height: 14px;
+    border: 3px solid var(--pozadi);
+    border-radius: 50%;
+    background: var(--tyrkysova);
+    content: "";
+}
+
+.rok {
+    display: inline-block;
+    margin-bottom: 10px;
+    color: var(--tyrkysova);
+    font-weight: bold;
+}
+
+.udalost-karta {
+    padding: 23px;
+    border: 1px solid var(--okraj);
+    border-radius: var(--radius);
+    background: var(--pozadi-karty);
+}
+
+.udalost-karta h3 {
+    margin-top: 0;
+}
+
+.udalost-karta p {
+    margin-bottom: 0;
+}
+
+.zajimavost {
+    margin: 35px 0;
+    padding: 28px;
+    border: 1px solid var(--okraj);
+    border-radius: var(--radius);
+    background: var(--pozadi-svetle);
+}
+
+.zajimavost h2 {
+    margin-top: 0;
+    color: var(--tyrkysova);
+}
+
+/* DRUHY KRYPTOMĚN */
+
+.krypto-karty {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.krypto-karta {
+    min-width: 0;
+    padding: 25px;
+    border: 1px solid var(--okraj);
+    border-radius: var(--radius);
+    background: var(--pozadi-karty);
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.krypto-karta:hover {
+    transform: translateY(-4px);
+    border-color: var(--modra);
+}
+
+.mince {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--pozadi-svetle);
+    color: var(--tyrkysova);
+    font-size: 34px;
+    font-weight: bold;
+}
+
+.krypto-karta h2 {
+    margin-bottom: 8px;
+    font-size: 23px;
+}
+
+.kategorie {
+    color: var(--tyrkysova);
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.krypto-karta p:last-child {
+    margin-bottom: 0;
+}
+
+.krypto-karta strong {
+    color: var(--text);
+}
+
+/* PRAKTICKÉ VYUŽITÍ */
+
+.vyuziti-banner {
+    padding: clamp(28px, 6vw, 60px);
+    border: 1px solid var(--okraj);
+    border-radius: 22px;
+    background:
+        radial-gradient(circle at 90% 20%,
+            rgba(73, 224, 193, 0.18), transparent 35%),
+        var(--pozadi-karty);
+}
+
+.vyuziti-banner h2 {
+    margin: 12px 0;
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.vyuziti-banner p:last-child {
+    max-width: 680px;
+}
+
+.vyuziti-sekce {
+    margin: 42px 0;
+}
+
+.vyuziti-karty {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.vyuziti-karta {
+    padding: 25px;
+    border: 1px solid var(--okraj);
+    border-radius: var(--radius);
+    background: var(--pozadi-karty);
+}
+
+.vyuziti-karta h3 {
+    margin-bottom: 8px;
+}
+
+.vyuziti-karta p {
+    margin-bottom: 0;
+}
+
+.vyhody-nevyhody {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+    margin: 35px 0;
+}
+
+.vyhody,
+.nevyhody {
+    padding: 26px;
+    border: 1px solid var(--okraj);
+    border-radius: var(--radius);
+    background: var(--pozadi-karty);
+}
+
+.vyhody h2 {
+    color: var(--tyrkysova);
+}
+
+.nevyhody h2 {
+    color: #ff9a91;
+}
+
+.vyhody-nevyhody ul {
+    padding-left: 22px;
+    color: var(--text-tlumeny);
+}
+
+.vyhody-nevyhody li {
+    margin: 10px 0;
+}
+
+/* PATIČKA */
+
+.paticka {
+    margin-top: 45px;
+    padding: 24px;
+    border: 1px solid var(--okraj);
+    border-radius: 12px;
+    background: var(--pozadi-karty);
+    text-align: center;
+}
+
+.paticka p {
+    margin: 4px 0;
+    font-size: 13px;
+}
+
+.paticka p:first-child {
+    color: var(--text);
+    font-weight: bold;
+}
+
+/* MOBILNÍ TELEFONY A TABLETY */
+
+@media (max-width: 850px) {
+    .rozcestnik,
+    .krypto-karty {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .hlavicka {
+        gap: 14px;
+        padding: 18px;
+    }
+
+    .stranka {
+        width: min(100% - 28px, var(--sirka));
+    }
+}
+
+@media (max-width: 600px) {
+    .stranka {
+        width: calc(100% - 20px);
+        margin: 10px auto;
+    }
+
+    .hlavicka {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hlavicka h1 {
+        font-size: 20px;
+    }
+
+    .navigace {
+        gap: 5px;
+        margin-bottom: 22px;
+        padding: 8px;
+    }
+
+    .navigace a {
+        padding: 8px 10px;
+        font-size: 30px;
+    }
+
+    .uvodni-banner {
+        min-height: 320px;
+        padding: 25px;
+    }
+
+    .rozcestnik,
+    .krypto-karty,
+    .vyuziti-karty,
+    .vyhody-nevyhody,
+    .stridavy-obsah {
+        grid-template-columns: 1fr;
+    }
+
+    .rozcestnik-karta {
+        min-height: 200px;
+    }
+
+    .obrazek-blok,
+    .text-blok {
+        min-height: 190px;
+        padding: 22px;
+    }
+
+    .casova-osa {
+        padding-left: 28px;
+    }
+
+    .casova-osa::before {
+        left: 7px;
+    }
+
+    .udalost::before {
+        left: -27px;
+    }
+
+    .historie-uvod,
+    .uvodni-info,
+    .zajimavost,
+    .zaver {
+        padding: 22px;
+    }
+
+    .paticka {
+        padding: 18px 12px;
+    }
+}
